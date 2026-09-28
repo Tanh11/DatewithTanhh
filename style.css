@@ -1,0 +1,280 @@
+:root {
+    --bg-color: #2b1b2d;
+    --text-color: #ffffff;
+    --pink-accent: #f8a5c2;
+    --pink-btn-bg: #f78fb3;
+    --pink-btn-hover: #f192b3;
+    --white-btn-bg: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --font-main: 'Georgia', serif;
+    --font-handwritten: 'Cursive', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 550px;
+    padding: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.page.active {
+    display: flex;
+    opacity: 1;
+}
+
+.main-title {
+    font-family: var(--font-main);
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.final-title {
+    font-size: 2.8rem;
+    color: var(--pink-accent);
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 25px;
+}
+
+/* Nút bấm */
+.pink-btn, .white-btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.pink-btn {
+    background-color: var(--pink-btn-bg);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(247, 143, 179, 0.3);
+}
+
+.pink-btn:hover {
+    background-color: var(--pink-btn-hover);
+    transform: translateY(-2px);
+}
+
+.white-btn {
+    background-color: var(--white-btn-bg);
+    color: var(--bg-color);
+}
+
+.white-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.nav-btn-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.no-btn {
+    position: relative;
+}
+
+/* Tùy chỉnh ô chọn ngày */
+.date-picker-wrapper {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.custom-date-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 2px solid var(--pink-btn-bg);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+    outline: none;
+    text-align: center;
+}
+
+.error-msg {
+    color: #ff6b6b;
+    font-size: 0.95rem;
+    min-height: 24px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* Lưới chọn Hoạt động */
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.activity-card {
+    background-color: var(--card-bg);
+    padding: 18px 10px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.activity-card:hover {
+    transform: translateY(-3px);
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.activity-card.selected {
+    border-color: var(--pink-accent);
+    background-color: rgba(247, 143, 179, 0.25);
+}
+
+.activity-card .icon {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Biểu mẫu động */
+#preferences-form {
+    width: 100%;
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--pink-accent);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: var(--pink-accent);
+}
+
+/* Khung hiển thị kết quả */
+.result-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 20px;
+    width: 100%;
+    margin: 15px 0;
+    text-align: left;
+    backdrop-filter: blur(5px);
+}
+
+.result-card h3 {
+    color: var(--pink-accent);
+    font-size: 0.85rem;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+.result-card p {
+    font-size: 1.05rem;
+}
+
+.result-card hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin: 18px 0;
+}
+
+.learned-info p {
+    margin-bottom: 8px;
+}
+
+.final-note {
+    font-family: var(--font-handwritten);
+    font-size: 1.4rem;
+    color: var(--pink-accent);
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Trái tim rơi */
+.falling-hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    top: -20px;
+    font-size: 1.2rem;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh);
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời Mời Đặc Biệt 💕</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Trang 1: Lời mời ban đầu -->
+        <section id="page1" class="page active">
+            <h1 class="main-title">Will You Go Out With Me?</h1>
+            <p class="subtitle">I have something important to ask you...</p>
+            <button id="start-btn" class="pink-btn">Continue 💖</button>
+        </section>
+
+        <!-- Trang 2: Hỏi Có/Không -->
+        <section id="page2" class="page">
+            <h1 class="main-title">Will you go out with me?</h1>
+            <div class="btn-group">
+                <button id="yes-btn" class="pink-btn yes-btn">Yes 🧡</button>
+                <button id="no-btn" class="white-btn no-btn">No 💔</button>
+            </div>
+        </section>
+
+        <!-- Trang 3: Chọn ngày -->
+        <section id="page3" class="page">
+            <h1 class="main-title">Yay! When should we go? 🗓️</h1>
+            <p class="subtitle">Hãy chọn một ngày rảnh của bạn nhé!</p>
+            
+            <div class="date-picker-wrapper">
+                <input type="date" id="date-input" class="custom-date-input">
+            </div>
+            
+            <p id="date-error-msg" class="error-msg"></p>
+
+            <div class="nav-btn-group">
+                <button class="back-btn white-btn" onclick="goToPage(2)">⬅ Quay lại</button>
+                <button id="date-next-btn" class="pink-btn">Tiếp theo ➔</button>
+            </div>
+        </section>
+
+        <!-- Trang 4: Chọn hoạt động -->
+        <section id="page4" class="page">
+            <h1 class="main-title">Where should we go? 💕</h1>
+            <div class="activity-grid">
+                <div class="activity-card" data-activity="Dinner">
+                    <span class="icon">🍜</span>
+                    <p>Dinner</p>
+                </div>
+                <div class="activity-card" data-activity="Coffee">
+                    <span class="icon">☕</span>
+                    <p>Coffee</p>
+                </div>
+                <div class="activity-card" data-activity="Picnic">
+                    <span class="icon">🌸</span>
+                    <p>Picnic</p>
+                </div>
+                <div class="activity-card" data-activity="Arcade">
+                    <span class="icon">🕹️</span>
+                    <p>Arcade</p>
+                </div>
+                <div class="activity-card" data-activity="Beach">
+                    <span class="icon">🌊</span>
+                    <p>Beach</p>
+                </div>
+                <div class="activity-card" data-activity="Surprise Me">
+                    <span class="icon">✨</span>
+                    <p>Surprise Me</p>
+                </div>
+            </div>
+
+            <div class="nav-btn-group">
+                <button class="back-btn white-btn" onclick="goToPage(3)">⬅ Quay lại</button>
+                <button id="activity-next-btn" class="pink-btn">Tiếp theo ➔</button>
+            </div>
+        </section>
+
+        <!-- Trang 5: Sở thích linh hoạt theo lựa chọn -->
+        <section id="page5" class="page">
+            <h1 class="main-title" id="pref-title">Tell me more! 💭</h1>
+            <p class="subtitle">Để mình chuẩn bị thật chu đáo nhé</p>
+            
+            <form id="preferences-form">
+                <div id="dynamic-inputs">
+                    <!-- Dynamic inputs will be inserted here by JavaScript -->
+                </div>
+
+                <div class="nav-btn-group">
+                    <button type="button" class="back-btn white-btn" onclick="goToPage(4)">⬅ Quay lại</button>
+                    <button type="submit" class="pink-btn">Hoàn thành ➔</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Trang 6: Kết quả tổng hợp -->
+        <section id="page6" class="page result-page">
+            <h1 class="main-title final-title">It's a date! 💕</h1>
+            <div class="result-card">
+                <h3>THỜI GIAN</h3>
+                <p id="result-date">...</p>
+                
+                <h3>HOẠT ĐỘNG & ĐỊA ĐIỂM</h3>
+                <p id="result-activity-location">...</p>
+                
+                <hr>
+                
+                <h3>THÔNG TIN CHI TIẾT</h3>
+                <div id="result-details" class="learned-info">
+                    <!-- Thông tin chi tiết sẽ được điền tự động ở đây -->
+                </div>
+                
+                <p class="final-note"><em>I can't wait! ❤️</em></p>
+            </div>
+
+            <div class="nav-btn-group">
+                <button class="back-btn white-btn" onclick="goToPage(5)">⬅ Chỉnh sửa</button>
+                <button id="copy-btn" class="pink-btn">🔗 Sao chép kết quả</button>
+            </div>
+        </section>
+
+        <!-- Hiệu ứng trái tim rơi -->
+        <div class="falling-hearts"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
